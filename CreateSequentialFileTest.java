@@ -1,17 +1,16 @@
 /*****************************************************************
  * Name: Edwin Figueroa
- * Date: 5/2/18
+ * Date: 5/3/18
  *
- * Description: TesterFile 
+ * Description: Test the created file. 
  *****************************************************************/
 
-public class ReadSequentialFileTest {
-    
+public class CreateSequentialFileTest {
+
     public static void main(String[] args) {
-        ReadSequentialFile application = new ReadSequentialFile();
+        CreateSequentialFile application = new CreateSequentialFile();
 
         application.openFile();
-        application.readRecords();
-        application.closeFile();
+        application.addRecord();
     }
 }

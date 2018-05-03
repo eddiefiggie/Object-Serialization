@@ -10,7 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
-import CardSerializable;
+// import CardSerializable;
 
 public class ReadSequentialFile {
 
@@ -27,38 +27,40 @@ public class ReadSequentialFile {
     }
 
     public void readRecords() {
-        CardSerializable card;
-        System.out.printf("%-10s%\n", "Card Type");
+        CardSerializable card; 
+        System.out.println("Card Type");
 
         try {
             while(true) {
                 card = (CardSerializable) input.readObject();
-                
+                System.out.println(card.display());
                 // call CardSerializable display() method
-                System.out.printf("%-10s%\n", "Card Type");
+                //card.display();
             }            
         }
-        catch(EOFException endOfFileException) {
+        catch(Exception e) {
             return; // end of file was reached
         }
+
+/*
         catch(ClassNotFoundException classNotFoundException) {
             System.err.println("Unable to create object.");
         }
         catch(IOException ioException) {
             System.err.println("Error during read from file.");
-        }
+        }*/
     }
+
 
     public void closeFile() {
         try {
             if(input != null) {
-                input.close;
+                input.close();
             }
         }
         catch(IOException ioException) {
             System.err.println("Error closing file.");
+            System.exit(1);
         }
     }
-    
-
 }

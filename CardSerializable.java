@@ -12,11 +12,21 @@ import java.io.Serializable;
 
 class CardSerializable implements Serializable {
 
-    private value;
-    private suit;
-    public CardSerializable(String value, String suit) {
-        this.value = value;
-        this.suit = suit;
+    private String value;
+    private String suit;
+
+    public CardSerializable() {
+        this("", "");
+    }
+
+    public CardSerializable(String v, String s) {
+        setValue(v);
+        setSuit(s);
+    }
+
+    public String display() {
+        String display = getValue() + " " + getSuit();
+        return display;
     }
 
     public String getValue() {
