@@ -31,14 +31,17 @@ public class CreateSequentialFile {
             String value;
             String suit;
             
-            Scanner input = new Scanner(System.in);
-            System.out.print("Enter card value: ");
-            value = input.next();
-            System.out.print("Enter card value: ");
-            suit = input.next();
+            for(int count = 0; count < 5; count++) {
+                Scanner input = new Scanner(System.in);
+                System.out.print("Enter card value:  ");
+                value = input.next();
+                System.out.print("Enter card suit: ");
+                suit = input.next();
+                System.out.print("-------------------");
             
-            card = new CardSerializable(value, suit);
-            output.writeObject(card);
+                card = new CardSerializable(value, suit);
+                output.writeObject(card);
+            }
         }
         catch(IOException ioException) {
             System.err.println("Error writing to file.");

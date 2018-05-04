@@ -28,27 +28,18 @@ public class ReadSequentialFile {
 
     public void readRecords() {
         CardSerializable card; 
-        System.out.println("Card Type");
+        System.out.println("Card Descritpion");
+        System.out.println("----------------");
 
         try {
             while(true) {
                 card = (CardSerializable) input.readObject();
                 System.out.println(card.display());
-                // call CardSerializable display() method
-                //card.display();
             }            
         }
         catch(Exception e) {
             return; // end of file was reached
         }
-
-/*
-        catch(ClassNotFoundException classNotFoundException) {
-            System.err.println("Unable to create object.");
-        }
-        catch(IOException ioException) {
-            System.err.println("Error during read from file.");
-        }*/
     }
 
 
